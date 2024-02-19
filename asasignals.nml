@@ -23,12 +23,12 @@ grf
     }
 }
 
-template template_sprite_matrix(w, h, ox, oy, xindex, yindex, z)
+template template_sprite_matrix(w, h, ox, oy, xindex, yindex, z) // thanks Zephyris
 {
     [(1+xindex*(1+w))*z, (1+yindex*(1+h))*z, w*z, h*z, ox*z, oy*z]
 }
 
-template template_signals_base(z)
+template template_signals_base(z) // thanks Zephyris
 {
     template_sprite_matrix(22, 30, -7, -28, 0, 0, z)
     template_sprite_matrix(22, 30, -7, -28, 1, 0, z)
