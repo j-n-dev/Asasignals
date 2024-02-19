@@ -1,0 +1,132 @@
+
+
+grf
+{
+    grfid: "JL\01\01";
+    name: string(STR_GRF_NAME);
+    desc: string(STR_GRF_DESC);
+    version: 0;
+    min_compatible_version: 0;
+    param 0
+    {
+        sideness
+        {
+            name: string(STR_PARAM_NAME_SIDENESS);
+            desc: string(STR_PARAM_DESC_SIDENESS);
+            min_value: 0;
+            max_value: 1;
+            def_value: 0;
+            names:
+            {
+                0: string(STR_PARAM_VALUE_SIDENESS_RIGHT);
+                1: string(STR_PARAM_VALUE_SIDENESS_LEFT);
+            };
+        }
+    }
+}
+
+template template_sprite_matrix(w, h, ox, oy, xindex, yindex, z)
+{
+    [(1+xindex*(1+w))*z, (1+yindex*(1+h))*z, w*z, h*z, ox*z, oy*z]
+}
+
+template template_signals_base(z)
+{
+    template_sprite_matrix(22, 30, -7, -28, 0, 0, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 0, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 1, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 1, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 2, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 2, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 3, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 3, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 4, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 4, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 5, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 5, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 6, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 6, z)
+    template_sprite_matrix(22, 30, -7, -28, 0, 7, z)
+    template_sprite_matrix(22, 30, -7, -28, 1, 7, z)
+}
+
+replace (1275, "base_32bpp.png")
+{
+    template_signals_base(1)
+}
+
+replace (5215, "pbs_light_toyland_oneway_32bpp.png")
+{
+    template_signals_base(1)
+}
+
+replace (5199, "pbs_light_toyland_base_32bpp.png")
+{
+    template_signals_base(1)
+}
+
+replace (5103, "presignal_light_exit_32bpp.png")
+{
+    template_signals_base(1)
+}
+
+replace (5119, "presignal_light_combo_32bpp.png")
+{
+    template_signals_base(1)
+}
+
+replace (5087, "presignal_light_entry_32bpp.png")
+{
+    template_signals_base(1)
+}
+
+//replacenew (PROGRAMMABLE_PRE_SIGNAL, "pbs_light_toyland_noentry_32bpp.png")
+//{
+//    template_signals_base(1)
+//}
+if (sideness == 0)
+{   
+    //RHT
+    replace (5151, "presignal_semaphore_rightside_entry_32bpp.png")
+    {
+      template_signals_base(1)
+    }
+
+    replace (5167, "presignal_semaphore_rightside_exit_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5183, "presignal_semaphore_rightside_combo_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5279, "pbs_semaphore_rightside_oneway_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+}
+else
+{
+    //LHT
+    replace (5151, "presignal_semaphore_leftside_entry_32bpp.png")
+    {
+      template_signals_base(1)
+    }
+
+    replace (5167, "presignal_semaphore_leftside_exit_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5183, "presignal_semaphore_leftside_combo_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5279, "pbs_semaphore_leftside_oneway_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+}

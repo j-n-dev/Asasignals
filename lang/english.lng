@@ -1,0 +1,9 @@
+##grflangid 0x01
+
+# GRF name and description
+STR_GRF_NAME             :Asasignals
+STR_GRF_DESC             :A revamp of vanilla signal graphics, designed to be used alongside OpenGFX2 but can work without it. Created by asasnat with the help of Zephyris, creator of zBase and OpenGFX2.
+STR_PARAM_NAME_SIDENESS  :Semaphore Signal Side
+STR_PARAM_DESC_SIDENESS  :Whether left-side graphics or right-side graphics are used for semaphores.
+STR_PARAM_VALUE_SIDENESS_RIGHT:Right side
+STR_PARAM_VALUE_SIDENESS_LEFT :Left side
