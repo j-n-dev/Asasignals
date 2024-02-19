@@ -1,8 +1,6 @@
-
-
 grf
 {
-    grfid: "JL\01\01";
+    grfid: "AR\00\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
     version: 0;
@@ -10,7 +8,7 @@ grf
     param 0
     {
         sideness
-        {
+        {   
             name: string(STR_PARAM_NAME_SIDENESS);
             desc: string(STR_PARAM_DESC_SIDENESS);
             min_value: 0;
