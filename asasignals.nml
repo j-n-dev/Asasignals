@@ -3,7 +3,7 @@ grf
     grfid: "AR\00\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
-    version: 0;
+    version: 1;
     min_compatible_version: 0;
     param 0
     {
@@ -22,6 +22,12 @@ grf
         }
     }
 }
+
+if (openttd_version < version_openttd(1, 12, 0))
+{
+    error(WARNING, string(STR_WARNING_INCOMPAT_VERSION));
+}
+
 
 template template_sprite_matrix(w, h, ox, oy, xindex, yindex, z) // thanks Zephyris
 {
