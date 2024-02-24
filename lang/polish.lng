@@ -1,9 +1,12 @@
 ##grflangid 0x30
+# I am very bad at Polish despite it being my native language, sorry
 
 # GRF name and description
 STR_GRF_NAME             :Asasemafory
 STR_GRF_DESC             :Przebudowa standardowych grafik semaforów OpenGFX. Przeznaczona do użycia razem z OpenGFX2, ale działa bez niego. Stworzona przez asasnata z pomocą od Zephirys, twórcy zestawów grafik zBase i OpenGFX2.
-STR_PARAM_NAME_SIDENESS  :Sposób umieszczenia semaforów mechanicznych
-STR_PARAM_DESC_SIDENESS  :Oznacza typ grafik semaforów mechanicznych, które mają zostać użyte [lewostronne lub prawostronne].
+STR_PARAM_NAME_SIDENESS  :Typ grafik semaforów mechanicznych
+STR_PARAM_DESC_SIDENESS  :Oznacza typ grafik semaforów mechanicznych, które mają zostać użyte [lewostronny lub prawostronny]. NIE ZMIENIA sposobu rozmieszczenia semaforów.
 STR_PARAM_VALUE_SIDENESS_RIGHT:Prawostronny
 STR_PARAM_VALUE_SIDENESS_LEFT :Lewostronny
+STR_PARAM_VALUE_SIDENESS_DRSIDE:Ten sam co strona jazdy samochodów (Domyślne)
+STR_WARNING_INCOMPAT_VERSION  :Zaleca się używanie Asasemaforów na najnowszej wersji OpenTTD. Jeśli coś jest nie tak, ja Ci nie pomogę!

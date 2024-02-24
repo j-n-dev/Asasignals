@@ -3,7 +3,9 @@
 # GRF name and description
 STR_GRF_NAME             :Asasignals
 STR_GRF_DESC             :A revamp of vanilla signal graphics, designed to be used alongside OpenGFX2 but can work without it. Created by asasnat with the help of Zephyris, creator of zBase and OpenGFX2.
-STR_PARAM_NAME_SIDENESS  :Semaphore Signal Side
-STR_PARAM_DESC_SIDENESS  :Whether left-side graphics or right-side graphics are used for semaphores.
+STR_PARAM_NAME_SIDENESS  :Semaphore Signal Graphics
+STR_PARAM_DESC_SIDENESS  :Determines which semaphore graphics to use (does NOT change signal placement)
 STR_PARAM_VALUE_SIDENESS_RIGHT:Right side
 STR_PARAM_VALUE_SIDENESS_LEFT :Left side
+STR_PARAM_VALUE_SIDENESS_DRSIDE:Same as driving side (Default)
+STR_WARNING_INCOMPAT_VERSION  :It's recommended to always use Asasignals with the latest OpenTTD version. Things might still work, but if they don't, I'm not helping you!
