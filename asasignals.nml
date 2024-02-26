@@ -3,7 +3,7 @@ grf
     grfid: "AR\00\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
-    version: 2; // starts counting from V2 (currently we're at V3). Confusing, I know, but that's the way it ended up
+    version: 3; // starts counting from V2 (currently we're at V4). Confusing, I know, but that's the way it ended up
     // patches do not affect GRF version number (e.g. V5P2 is just version 4)
     min_compatible_version: 0;
     param 0
@@ -20,6 +20,38 @@ grf
                 0: string(STR_PARAM_VALUE_SIDENESS_RIGHT);
                 1: string(STR_PARAM_VALUE_SIDENESS_LEFT);
                 2: string(STR_PARAM_VALUE_SIDENESS_DRSIDE);
+            };
+        }
+    }
+    param 1
+    {
+        threelight
+        {
+            name: string(STR_PARAM_NAME_3LIGHT);
+            desc: string(STR_PARAM_DESC_3LIGHT);
+            min_value: 0;
+            max_value: 1;
+            def_value: 0;
+            names:
+            {
+                0: string(STR_PARAM_VALUE_3LIGHT_ABB);
+                1: string(STR_PARAM_VALUE_3LIGHT_ABA);
+            };
+        }
+    }
+    param 2
+    {
+        presignal
+        {
+            name: string(STR_PARAM_NAME_PRESIGNAL);
+            desc: string(STR_PARAM_DESC_PRESIGNAL);
+            min_value: 0;
+            max_value: 1;
+            def_value: 0;
+            names:
+            {
+                0: string(STR_PARAM_VALUE_PRESIGNAL_YELLOW);
+                1: string(STR_PARAM_VALUE_PRESIGNAL_GREEN);
             };
         }
     }
@@ -56,34 +88,94 @@ template template_signals_base(z) // thanks Zephyris
     template_sprite_matrix(22, 30, -7, -28, 1, 7, z)
 }
 
-replace (1275, "base_32bpp.png")
+replace (1275, "colourlight/base_32bpp.png")
 {
     template_signals_base(1)
 }
 
-replace (5215, "pbs_light_toyland_oneway_32bpp.png")
+if (threelight == 0) // TODO: my life is in fucking shambles please find a way to clean this up
 {
-    template_signals_base(1)
-}
+    replace (5215, "colourlight/pbs/pbs_light_toyland_oneway_32bpp_grr.png")
+    {
+        template_signals_base(1)
+    }
+    replace (5199, "colourlight/pbs/pbs_light_toyland_base_32bpp_grr.png")
+    {
+        template_signals_base(1)
+    }
 
-replace (5199, "pbs_light_toyland_base_32bpp.png")
-{
-    template_signals_base(1)
+    if (presignal == 0)
+    {
+        replace (5103, "colourlight/exit/presignal_light_exit_32bpp_yrr.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5119, "colourlight/combo/presignal_light_combo_32bpp_yrr.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5087, "colourlight/entry/presignal_light_entry_32bpp_yrr.png")
+        {
+            template_signals_base(1)
+        }
+    }
+    else
+    {
+        replace (5103, "colourlight/exit/presignal_light_exit_32bpp_grr.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5119, "colourlight/combo/presignal_light_combo_32bpp_grr.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5087, "colourlight/entry/presignal_light_entry_32bpp_grr.png")
+        {
+            template_signals_base(1)
+        }
+    }
 }
-
-replace (5103, "presignal_light_exit_32bpp.png")
+else
 {
-    template_signals_base(1)
-}
+    replace (5215, "colourlight/pbs/pbs_light_toyland_oneway_32bpp_grg.png")
+    {
+        template_signals_base(1)
+    }
+    replace (5199, "colourlight/pbs/pbs_light_toyland_base_32bpp_grg.png")
+    {
+        template_signals_base(1)
+    }
 
-replace (5119, "presignal_light_combo_32bpp.png")
-{
-    template_signals_base(1)
-}
-
-replace (5087, "presignal_light_entry_32bpp.png")
-{
-    template_signals_base(1)
+    if (presignal == 0)
+    {
+        replace (5103, "colourlight/exit/presignal_light_exit_32bpp_yry.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5119, "colourlight/combo/presignal_light_combo_32bpp_yry.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5087, "colourlight/entry/presignal_light_entry_32bpp_yry.png")
+        {
+            template_signals_base(1)
+        }
+    }
+    else
+    {
+        replace (5103, "colourlight/exit/presignal_light_exit_32bpp_grg.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5119, "colourlight/combo/presignal_light_combo_32bpp_grg.png")
+        {
+            template_signals_base(1)
+        }
+        replace (5087, "colourlight/entry/presignal_light_entry_32bpp_grg.png")
+        {
+            template_signals_base(1)
+        }
+    }
 }
 
 //replacenew (PROGRAMMABLE_PRE_SIGNAL, "pbs_light_toyland_noentry_32bpp.png")
@@ -94,22 +186,32 @@ replace (5087, "presignal_light_entry_32bpp.png")
 if (sideness == 0 || (sideness == 2 && traffic_side == TRAFFIC_SIDE_RIGHT))
 {   
     //RHT
-    replace (5151, "presignal_semaphore_rightside_entry_32bpp.png")
+    replace (5151, "semaphore/rht/presignal_semaphore_rightside_entry_32bpp.png")
     {
       template_signals_base(1)
     }
 
-    replace (5167, "presignal_semaphore_rightside_exit_32bpp.png")
+    replace (5167, "semaphore/rht/presignal_semaphore_rightside_exit_32bpp.png")
     {
         template_signals_base(1)
     }
 
-    replace (5183, "presignal_semaphore_rightside_combo_32bpp.png")
+    replace (5183, "semaphore/rht/presignal_semaphore_rightside_combo_32bpp.png")
     {
         template_signals_base(1)
     }
 
-    replace (5279, "pbs_semaphore_rightside_oneway_32bpp.png")
+    replace (5279, "semaphore/rht/pbs_semaphore_rightside_oneway_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5263, "semaphore/rht/pbs_semaphore_rightside_twoway_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5135, "semaphore/rht/base_semaphore_rightside_32bpp.png")
     {
         template_signals_base(1)
     }
@@ -117,22 +219,32 @@ if (sideness == 0 || (sideness == 2 && traffic_side == TRAFFIC_SIDE_RIGHT))
 else
 {
     //LHT
-    replace (5151, "presignal_semaphore_leftside_entry_32bpp.png")
+    replace (5151, "semaphore/lht/presignal_semaphore_leftside_entry_32bpp.png")
     {
       template_signals_base(1)
     }
 
-    replace (5167, "presignal_semaphore_leftside_exit_32bpp.png")
+    replace (5167, "semaphore/lht/presignal_semaphore_leftside_exit_32bpp.png")
     {
         template_signals_base(1)
     }
 
-    replace (5183, "presignal_semaphore_leftside_combo_32bpp.png")
+    replace (5183, "semaphore/lht/presignal_semaphore_leftside_combo_32bpp.png")
     {
         template_signals_base(1)
     }
 
-    replace (5279, "pbs_semaphore_leftside_oneway_32bpp.png")
+    replace (5279, "semaphore/lht/pbs_semaphore_leftside_oneway_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5263, "semaphore/lht/pbs_semaphore_leftside_twoway_32bpp.png")
+    {
+        template_signals_base(1)
+    }
+
+    replace (5135, "semaphore/lht/base_semaphore_leftside_32bpp.png")
     {
         template_signals_base(1)
     }

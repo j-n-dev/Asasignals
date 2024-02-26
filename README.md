@@ -2,7 +2,10 @@
 [PL: Asasemafory] Signal graphics replacement for OpenTTD, in OpenGFX2 style
 
 # Installation
-TODO: fill this out
+1. Install NML (I'm not going over this)
+2. Open a command propmt in the root directory
+3. Run ``nmlc --grf asasignals.grf asasignals.nml``
+4. Copy the resulting GRF file into ``Documents/OpenTTD/newgrf/`` (or equivalent directory)
 
 # Credits
 - Zephyris (programming help; some artistic guidance)
