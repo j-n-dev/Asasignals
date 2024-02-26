@@ -4,9 +4,17 @@
 # GRF name and description
 STR_GRF_NAME             :Asasemafory
 STR_GRF_DESC             :Przebudowa standardowych grafik semaforów OpenGFX. Przeznaczona do użycia razem z OpenGFX2, ale działa bez niego. Stworzona przez asasnata z pomocą od Zephirys, twórcy zestawów grafik zBase i OpenGFX2.
-STR_PARAM_NAME_SIDENESS  :Typ grafik semaforów mechanicznych
-STR_PARAM_DESC_SIDENESS  :Oznacza typ grafik semaforów mechanicznych, które mają zostać użyte [lewostronny lub prawostronny]. NIE ZMIENIA sposobu rozmieszczenia semaforów.
+STR_PARAM_NAME_SIDENESS  :Typ grafik semaforów kształtowych
+STR_PARAM_DESC_SIDENESS  :Ustala typ grafik semaforów kształtowych, które mają zostać użyte [lewostronny lub prawostronny]. NIE ZMIENIA sposobu rozmieszczenia semaforów.
 STR_PARAM_VALUE_SIDENESS_RIGHT:Prawostronny
 STR_PARAM_VALUE_SIDENESS_LEFT :Lewostronny
-STR_PARAM_VALUE_SIDENESS_DRSIDE:Ten sam co strona jazdy samochodów (Domyślne)
+STR_PARAM_VALUE_SIDENESS_DRSIDE:Zgodnie ze stroną jazdy pojazdów kołowych (Domyślne)
+STR_PARAM_NAME_3LIGHT:Zestaw komór 3-komorowych semaforów
+STR_PARAM_DESC_3LIGHT:Ustala rozstawienie komór na 3-komorowych semaforach; (od góry do dołu) ABB lub ABA.{}(A - zielony/żółty; B - czerwony)
+STR_PARAM_VALUE_3LIGHT_ABB:ABB
+STR_PARAM_VALUE_3LIGHT_ABA:ABA
+STR_PARAM_NAME_PRESIGNAL:Kolor sygnału "Jazda" na prasemaforach elektrycznych
+STR_PARAM_DESC_PRESIGNAL:Ustala, czy semafory wyjściowe/wejściowe/złożone mają używać koloru żółtego dla sygnału "Jazda" czy zielonego.
+STR_PARAM_VALUE_PRESIGNAL_YELLOW:Żółty (Domyślne)
+STR_PARAM_VALUE_PRESIGNAL_GREEN:Zielony
 STR_WARNING_INCOMPAT_VERSION  :Zaleca się używanie Asasemaforów na najnowszej wersji OpenTTD. Jeśli coś jest nie tak, ja Ci nie pomogę!
