@@ -11,7 +11,7 @@ TODO: introduce some sort of make system to make this process less painful
 
 # Credits
 - Zephyris (programming help; some artistic guidance)
-- Whoever made the original semaphore graphics
+- Whoever made the original OpenGFX semaphore graphics
 - Simon Foster (original signal sprites that I based my designs on)
 
 # Licence notes
