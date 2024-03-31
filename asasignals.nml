@@ -3,7 +3,7 @@ grf
     grfid: "AR\00\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESC);
-    version: 3; // starts counting from V2 (currently we're at V4). Confusing, I know, but that's the way it ended up
+    version: 4; // starts counting from V2 (currently we're at V5). Confusing, I know, but that's the way it ended up
     // patches do not affect GRF version number (e.g. V5P2 is just version 4)
     min_compatible_version: 0;
     param 0
@@ -53,6 +53,16 @@ grf
                 0: string(STR_PARAM_VALUE_PRESIGNAL_YELLOW);
                 1: string(STR_PARAM_VALUE_PRESIGNAL_GREEN);
             };
+        }
+    }
+    param 3
+    {
+        replace_semaphores
+        {
+            name: string(STR_PARAM_NAME_REPLACESEM);
+            desc: string(STR_PARAM_DESC_REPLACESEM);
+            type: bool;
+            def_value: 1;
         }
     }
 }
@@ -183,69 +193,72 @@ else
 //    template_signals_base(1)
 //}
 // TODO: find a way to clean this up maybe?
-if (sideness == 0 || (sideness == 2 && traffic_side == TRAFFIC_SIDE_RIGHT))
-{   
-    //RHT
-    replace (5151, "semaphore/rht/presignal_semaphore_rightside_entry_32bpp.png")
-    {
-      template_signals_base(1)
-    }
-
-    replace (5167, "semaphore/rht/presignal_semaphore_rightside_exit_32bpp.png")
-    {
-        template_signals_base(1)
-    }
-
-    replace (5183, "semaphore/rht/presignal_semaphore_rightside_combo_32bpp.png")
-    {
-        template_signals_base(1)
-    }
-
-    replace (5279, "semaphore/rht/pbs_semaphore_rightside_oneway_32bpp.png")
-    {
-        template_signals_base(1)
-    }
-
-    replace (5263, "semaphore/rht/pbs_semaphore_rightside_twoway_32bpp.png")
-    {
-        template_signals_base(1)
-    }
-
-    replace (5135, "semaphore/rht/base_semaphore_rightside_32bpp.png")
-    {
-        template_signals_base(1)
-    }
-}
-else
+if (replace_semaphores)
 {
-    //LHT
-    replace (5151, "semaphore/lht/presignal_semaphore_leftside_entry_32bpp.png")
-    {
-      template_signals_base(1)
-    }
+    if (sideness == 0 || (sideness == 2 && traffic_side == TRAFFIC_SIDE_RIGHT))
+    {   
+        //RHT
+        replace (5151, "semaphore/rht/presignal_semaphore_rightside_entry_32bpp.png")
+        {
+          template_signals_base(1)
+        }
 
-    replace (5167, "semaphore/lht/presignal_semaphore_leftside_exit_32bpp.png")
-    {
-        template_signals_base(1)
-    }
+        replace (5167, "semaphore/rht/presignal_semaphore_rightside_exit_32bpp.png")
+        {
+            template_signals_base(1)
+        }
 
-    replace (5183, "semaphore/lht/presignal_semaphore_leftside_combo_32bpp.png")
-    {
-        template_signals_base(1)
-    }
+        replace (5183, "semaphore/rht/presignal_semaphore_rightside_combo_32bpp.png")
+        {
+            template_signals_base(1)
+        }
 
-    replace (5279, "semaphore/lht/pbs_semaphore_leftside_oneway_32bpp.png")
-    {
-        template_signals_base(1)
-    }
+        replace (5279, "semaphore/rht/pbs_semaphore_rightside_oneway_32bpp.png")
+        {
+            template_signals_base(1)
+        }
 
-    replace (5263, "semaphore/lht/pbs_semaphore_leftside_twoway_32bpp.png")
-    {
-        template_signals_base(1)
-    }
+        replace (5263, "semaphore/rht/pbs_semaphore_rightside_twoway_32bpp.png")
+        {
+            template_signals_base(1)
+        }
 
-    replace (5135, "semaphore/lht/base_semaphore_leftside_32bpp.png")
+        replace (5135, "semaphore/rht/base_semaphore_rightside_32bpp.png")
+        {
+            template_signals_base(1)
+        }
+    }
+    else
     {
-        template_signals_base(1)
+        //LHT
+        replace (5151, "semaphore/lht/presignal_semaphore_leftside_entry_32bpp.png")
+        {
+          template_signals_base(1)
+        }
+
+        replace (5167, "semaphore/lht/presignal_semaphore_leftside_exit_32bpp.png")
+        {
+            template_signals_base(1)
+        }
+
+        replace (5183, "semaphore/lht/presignal_semaphore_leftside_combo_32bpp.png")
+        {
+            template_signals_base(1)
+        }
+
+        replace (5279, "semaphore/lht/pbs_semaphore_leftside_oneway_32bpp.png")
+        {
+            template_signals_base(1)
+        }
+
+        replace (5263, "semaphore/lht/pbs_semaphore_leftside_twoway_32bpp.png")
+        {
+            template_signals_base(1)
+        }
+
+        replace (5135, "semaphore/lht/base_semaphore_leftside_32bpp.png")
+        {
+            template_signals_base(1)
+        }
     }
 }

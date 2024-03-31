@@ -16,4 +16,6 @@ STR_PARAM_NAME_PRESIGNAL:Go Signal Color for Colorlight Presignals
 STR_PARAM_DESC_PRESIGNAL:Determines whether colorlight presignals will use a yellow aspect as the "go" signal or a green aspect.
 STR_PARAM_VALUE_PRESIGNAL_YELLOW:Yellow (Default)
 STR_PARAM_VALUE_PRESIGNAL_GREEN:Green
+STR_PARAM_NAME_REPLACESEM:Replace semaphores
+STR_PARAM_DESC_REPLACESEM:The semaphore graphics that Asasignals come with are kind of crap. By disabling this you can have better semaphore graphics while keeping the Asasignals colourlight graphics.
 STR_WARNING_INCOMPAT_VERSION  :It's recommended to always use {TITLE} with the latest OpenTTD version. Things might still work, but if they don't, I'm not helping you!

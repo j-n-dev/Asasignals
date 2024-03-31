@@ -17,4 +17,6 @@ STR_PARAM_NAME_PRESIGNAL:Kolor sygnału "Jazda" na prasemaforach elektrycznych
 STR_PARAM_DESC_PRESIGNAL:Ustala, czy semafory wyjściowe/wejściowe/złożone mają używać koloru żółtego dla sygnału "Jazda" czy zielonego.
 STR_PARAM_VALUE_PRESIGNAL_YELLOW:Żółty (Domyślne)
 STR_PARAM_VALUE_PRESIGNAL_GREEN:Zielony
+STR_PARAM_NAME_REPLACESEM:Replace semaphores
+STR_PARAM_DESC_REPLACESEM:(I won't even dare to translate this) The semaphore graphics that Asasignals come with are kind of crap. By disabling this you can have better semaphore graphics while keeping the Asasignals colourlight graphics.
 STR_WARNING_INCOMPAT_VERSION  :Zaleca się używanie Asasemaforów na najnowszej wersji OpenTTD. Jeśli coś jest nie tak, ja Ci nie pomogę!
