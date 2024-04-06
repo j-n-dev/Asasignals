@@ -1,15 +1,7 @@
-# Asasignals
-[PL: Asasemafory] Signal graphics replacement for OpenTTD, in OpenGFX2 style
+# Notice
+This project has been discontinued. I'd like to apologise to everyone who had the misfortune of looking at my horrid abominations.
 
-# Installation
-1. Install NML (I'm not going over this)
-2. Open a command prompt in the root directory
-3. Run ``nmlc --grf asasignals.grf asasignals.nml``
-4. Copy the resulting GRF file into ``Documents/OpenTTD/newgrf/`` (or equivalent directory)
-
-TODO: introduce some sort of make system to make this process less painful
-
-# Credits
+# Credits (and apologies)
 - Zephyris (programming help; some artistic guidance)
 - Whoever made the original OpenGFX semaphore graphics
 - Simon Foster (original signal sprites that I based my designs on)
